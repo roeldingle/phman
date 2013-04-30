@@ -1,0 +1,81 @@
+#content,#success_icon,#message_wrap h1{opacity: 0}
+#message_wrap{position:relative;top:0;left:0;text-align:center;}
+#message_wrap h1{margin-top:20px;font-size:18px;color:#888}
+
+.highlight{border:2px solid orange !important;}
+
+.fnt {
+font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+}
+
+.fl {
+float: left;
+}
+
+
+#logo_wrap{
+    width:100%;
+    height: 100px;
+    text-align: left;
+    display: inline-block;
+    background:url(../../core/images/bg_head.png) left top repeat-x;
+    padding:0;
+    margin:0;
+}
+
+#logo {
+    width: 240px;
+    height: 60px;
+    margin: 12px 0 0 10px;
+    background: url(../../core/images/company_logo.png) left top no-repeat;
+    display: inline;
+}
+
+#form-login {
+	text-align: left;
+	margin-top: 15%;
+	margin-left: 25%;
+	border: 1px solid #CCCCCC;
+	width: 50%;
+	top: 100%;	
+	height:350px;
+	-moz-border-radius:6px; 
+	-webkit-border-radius:6px; 
+    border-radius:6px; 
+    
+	-moz-box-shadow: 0 0 50px #ccc; 
+	-webkit-box-shadow: 0 0 50px #ccc; 
+     box-shadow: 0 0 50px #ccc; 
+}	
+#login-label {
+	font-size: 16px;
+	font-weight: bold;
+	font-family: calibri;
+	border-bottom: 1px solid #333333;
+	padding: 10px 10px 10px 0px;
+}
+
+
+#user_pass,#user_login {
+	margin:2px 0 20px 10px;
+	font-size:24px;
+	width:65%;
+	padding:3px;
+	margin-top:2px;
+	margin-right:6px;
+	margin-bottom:30px;
+	border:2px solid #e5e5e5;
+	background:#fbfbfb;
+}
+
+#login_form input[type="text"], #login_form input[type="password"] {
+    padding-left:15px;
+}
+
+form{padding: 20px 30px 20px 30px;margin-top:10px;}
+form div{margin-left:20px;}
+
+.button{margin-right:45px;}
+
+.error {border-color:#ff0000}
+label.error{color:#ff0000;font-size:9px;font-style:italic;margin-left:5px;}

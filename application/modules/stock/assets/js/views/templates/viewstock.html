@@ -1,0 +1,52 @@
+<div class="ui-widget">
+    <form class="view_stock">
+        <table class="table_form al" border="0" cellpadding="15">
+            <colgroup>
+                <col width="140px">
+                <col>
+            </colgroup>
+            <tbody><tr>
+                <th><label for="select1">Sub Category</label></th>
+                <td><%=rows.tssc_name%></td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="input1">
+                        <% if (rows.tsmc_smcid  === "000011") { %>
+                            Version
+                        <% } else { %>
+                            Model
+                        <% } %>
+                    </label>
+                </th>
+                <td>
+                    <% if (rows.tsmc_smcid  === "000011") { %>
+                            <%=rows.tsit_version%>
+                    <% } else { %>
+                        <%=rows.tsit_model%>
+                    <% } %>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="input1">Brand</label></th>
+                <td><%=rows.tsit_brand%></td>
+            </tr>
+            <tr>
+                <th><label for="input1">Serial Number</label></th>
+               <td><%=rows.tsit_serial_number%></td>
+            </tr>
+            <tr>
+                <th><label for="textarea1">Description</label></th>
+                <td><%=rows.tsit_description%></td>
+            </tr>
+            <tr>
+                <th><label for="textarea1">History</label></th>
+               <td><%=rows.tshis_history%></td>
+            </tr>
+            <tr>
+                <th><label for="input1">Employee</label></th>
+               <td><%=rows.te_fname%> <%=rows.te_lname%></td>
+            </tr>
+        </tbody></table>
+    </form>
+</div>

@@ -1,0 +1,1 @@
+<button style="height:50px;padding:5px 10px 5px 10px;font-size:24px;" class="ajax-test-button">AJAX TEST</button>

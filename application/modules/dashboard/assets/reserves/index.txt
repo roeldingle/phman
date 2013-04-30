@@ -1,0 +1,98 @@
+   public function _get_last_30_days()
+   {
+      $adate = array();
+      // Loop 30 times on days
+      $iadjust = 30;
+      // Get last 30 days
+      $i30days = strtotime("-".($iadjust - 1 )." days");
+      // Get first days of
+      $ifirst_day = date("d", $i30days );
+      // Get total days of the first day month
+      $ifirst_total_days = date("t", $i30days );
+      // Get first month num with no leading "0" zero
+      $ifirst_month_num = date("n", $i30days );
+      // Get first year
+      $ifirst_year = date("Y", $i30days );      
+      // Initialize month to start counter      
+      $ifeb_counter = $ifirst_month_num;      
+      // Get current total days of the month
+      $icurrent_total_days = date("t" );
+      // Get current year
+      $icurrent_year = date("Y");
+      // Get current month
+      $icurrent_month = date("n");
+      // Get total number of days in February
+      $ifeb_total_days = date("t", mktime(0, 0, 0,2, 1,  $icurrent_year ));
+      // Initialize year counter
+      $iyear_counter = $ifirst_year;
+      for( $i = 1; $i <= $iadjust; $i++ ) {
+         // Check if month is February, then assign ifeb_counter total days
+         if( ( $ifeb_counter + 1 ) <= 12 && ( ( $ifeb_counter + 1 ) == 2 ) && ($icurrent_month != ( $ifeb_counter + 1 ) ) && ( $icurrent_month == 2 ) ) {
+            $itotal_days = $ifeb_total_days;
+         } else {
+            $itotal_days = $ifirst_total_days;
+         }
+         // Reset to one 1 if day is greater that total days
+         if( $ifirst_day > $itotal_days ) {
+            $ifirst_day = 1;
+            $iyear_counter = ( ( $ifirst_month_num + 1 ) > 12 ) ? ( $ifirst_year + 1 ) : $ifirst_year;
+         }
+         // echo"<br />" . $iyear_counter;
+         // echo"<br />" . $iyear_counter;
+         // echo"<br /> $i) " . $ifirst_day .'-' . $iyear_counter;
+         // $adate[] = array(
+            // 'year' => $iyear_counter,
+            // 'days' => $ifirst_day
+         // );
+         $ifirst_day++;
+      }
+   }
+   
+   
+HR MANAGEMENT
+1. Hired Employees               done
+2. Probationary Employees        done
+3. Current Number of Employees   done
+4. Retired Employees             done 
+5. Absences                      done
+6.Tardiness                      done
+7. New Employees                 done
+   
+   
+   
++=======December 17 2012   
+PH Management -> Dashboard -> HR Management Summary
+1. Hired employees Listing Done()
+2. Get hired employees for last 6 months done
+3. Get total hired employees done
+
+4. Retired employees Listing Done()
+5. Get the retired employees for last 6 months done
+6. Get the total retired employees done
+
+7. New Employees for the last 30 days listing
+8. Get the total hired employees done
+
+9. Tardiness for the last 6 months listing
+10. Get the total tardiness of the last 6 months
+
+11. Listing of absences for the last 6 month
+12. Get the total tardiness of the last 6 months
+
++=======Decemeber 18 2012
+PH Management -> Dashboard -> Expense Management
+1. Listing of Expense Management for the last 3 months
+2. Get the total planned budget  for the last 3 months
+3. Get the total expenses budget  for the last 3 months
+4. Get the overall total of planned budget and expenses
+
+PH Management -> Dashboard
+5. Add save state functionality for dashboard when the user drag item in dashboard the item position will be saved
+6. Adding save state functionality for maximize and minimize, when the user minimize the item or maximize the item the state of the will be saved
+
++=======Decemeber 19 2012
+PH Management -> Dashboard
+1. Add Miminize button
+2. Add Maximize button
+3. Add Minimize functionality , when the user minimize the dashboard item the state will be saved
+4. Add Maximize functionality , when the user maximize the dashboard item the state will be saved

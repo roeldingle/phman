@@ -1,0 +1,90 @@
+<input type="hidden" id="mod_stock_id" value="<%= rows.stock_data.tsit_siid %>" />
+<input type="hidden" id="mod_history_id" value="<%= rows.stock_data.tshis_idx %>" />
+
+<div class="ui-widget">
+    <form class="save_stock">
+        <table class="table_form al" border="0">
+            <colgroup>
+                <col width="140px">
+                <col>
+            </colgroup>
+            <tbody><tr>
+                <th><label for="select1">Sub Category</label></th>
+                <td>
+                <select class="sub_category_list select_type_1 nm np" id="select1" name="tsit_tssc_sscid">
+                    <% var sub_cat_data = rows.sub_cat_data; %>
+                     <% for(var i = 0; i < sub_cat_data.length; i++){ %>
+                        <% var row = sub_cat_data[i]; %>
+                             <option value="<%= row.tssc_sscid %>" 
+                                
+                                <% if (rows.stock_data.tsit_tssc_sscid  == row.tssc_sscid ) { %>
+                                    selected
+                                <% } %>
+                                
+                                 >
+                                 <%= row.tssc_name %>
+                             </option>
+                    <% }; %>
+                </select>
+                </td>
+            </tr>
+             <tr>
+                <th>
+                    <label for="input1">
+                        <span class="required nm np">*</span>
+                        <% if (rows.main_cat_data.tsmc_smcid  === "000011") { %>
+                            Version
+                        <% } else { %>
+                            Model
+                        <% } %>
+                    </label>
+                </th>
+                <td><input type="text" value="<%=rows.stock_data.tsit_model%>" class="input_type_1 nm" id="input1" name="tsit_model" validate="required" ></td>
+            </tr>
+            <tr>
+                <th><label for="input1"><span class="required nm np">*</span>Brand</label></th>
+                <td><input type="text" value="<%=rows.stock_data.tsit_brand%>" class="input_type_1 nm" id="input1" name="tsit_brand" validate="required"></td>
+            </tr>
+            <tr>
+                <th><label for="input1"><span class="required nm np">*</span>Serial Number</label></th>
+                <td><input type="text" value="<%=rows.stock_data.tsit_serial_number%>" class="input_type_1 nm" id="input1" name="tsit_serial_number" validate="required"></td>
+            </tr>
+            <tr>
+                <th><label for="textarea1"><span class="required nm np">*</span>Description</label></th>
+                <td>
+                    <textarea class="textarea_1"  id="stock_desription" validate="required" name="tsit_description"><%=rows.stock_data.tsit_description%></textarea>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="textarea1"><span class="required nm np">*</span>History</label></th>
+                <td>
+                    <textarea class="textarea_1"  id="stock_history" validate="required" name="tshis_history"><%=rows.stock_data.tshis_history%></textarea>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="input1"><span class="required nm np">*</span>Employee</label></th>
+                <td>
+                    <select id="employee_list" name="tsit_user_assigned" validate="required">
+                        <option value="">-select-</option>
+                        <option value="000000">vacant</option>
+                        <% var emp_data = rows.emp_data; %>
+                         <% for(var i = 0; i < emp_data.length; i++){ %>
+                            <% var row = emp_data[i]; %>
+                                <option value="<%= row.te_idx %>" 
+                                
+                                <% if (rows.stock_data.te_idx  == row.te_idx ) { %>
+                                    selected
+                                <% } %>
+                                
+                                ><%= row.te_fname %> <%= row.te_lname %></option>
+                            
+                        <% }; %>
+                    </select>
+                </td>
+            </tr>
+        </tbody></table>
+        <div class="btn_div fr">
+            <a href="javascript:void(0)" class="savestock_btn btn btn_type_3 btn_space" alt="modify" ><span>&nbsp;Save&nbsp;</span></a>
+        </div>
+    </form>
+</div>

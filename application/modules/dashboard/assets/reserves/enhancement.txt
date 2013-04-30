@@ -1,0 +1,7 @@
++==========December 19, 2012
+1. System's Full Summary (Done)
+2. Finance Management (Done)
+3. Stock Management (Done)
+4. HR Management (Done)
+5. Admin's Configurations & Settings (Done)
+6. Recent User Activities (Done)

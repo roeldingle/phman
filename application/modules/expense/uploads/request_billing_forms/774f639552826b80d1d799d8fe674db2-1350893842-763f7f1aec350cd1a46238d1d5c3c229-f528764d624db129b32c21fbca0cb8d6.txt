@@ -1,0 +1,16 @@
+CREATE TABLE tb_site_configuration (idx INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+branch_idx INT NOT NULL,
+fsite_url VARCHAR(100) NOT NULL,
+fsite_owner VARCHAR(100),
+fcompany_name VARCHAR(100),
+fcompany_reg_number VARCHAR(100),
+fsecurity_manager VARCHAR(100),
+fadmin_email VARCHAR(100),
+faddress VARCHAR(250),
+fphone_number VARCHAR(100),
+finformation TEXT,
+ftime_zone VARCHAR(100),
+ffile VARCHAR(250),
+fpolicy(text) ENGINE=INNODB CHARSET=utf8)
+
+INSERT INTO tb_site_configuration (idx, branch_idx, fsite_url, fsite_language) VALUES (1, 1, http://www.lms.com, en)

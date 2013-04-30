@@ -1,0 +1,81 @@
+<% var rows = user_data_rows[0]; %>
+<input type="hidden" id="form_action" value="edit" />
+<input type="hidden" id="date_created" value="<%= rows.tu_date_created %>" />
+
+<div id="main_wrap">
+    <div class="message_wrap_dialog" style="width:95%;"></div>
+    <div id="form-login" class="ui-corner-all">
+        <form method="POST" id="add_user_form">
+      <table class="table_form al" border="0">
+         <colgroup>
+            <col width="140px">
+            <col>
+         </colgroup>
+         <tbody>
+         <!--
+          <tr>
+            <th><label for="select3">Employee <span class="required">*</span></label></th>
+            <td>
+               <div class="ui-widget fl nm np" >
+                  <%= rows.label %>
+                  <input type="hidden" id="employee_id" value="<%= rows.tu_idx %>"/>
+               </div>
+            </td>
+         </tr>
+         -->
+         <input type="hidden" id="employee_id" value="<%= rows.tu_idx %>"/>
+         <tr>
+            <th><label for="textarea2">Username <span class="required">*</span></label></th>
+            <td>
+               <input class="input_type_1" id="employee_username" name="employee_username" validate="required|alpha|rangelength[6,12]" value="<%= rows.tu_username %>" />
+               <p style="font-style:italic;font-size:10px;" class="mr5">Must be at least 6 characters (no special characters)</p>
+               
+            </td>
+         </tr>
+         
+          <tr>
+            <th><label for="textarea2">Password <span class="required">*</span></label>
+                <input type="hidden" class="input_type_1" id="hidden_employee_password"  value="<%= rows.tu_password %>" />
+                 
+            </th>
+            <td>
+                <span class="pass_change"  id="change_pass_wrap">
+                
+                </span>
+                <a href="javascript:void(0)" class="small_link ml10" id="change_password"  >Change password</a>
+               <p style="font-style:italic;font-size:10px;" class="mr5" id="pass_note"></p>
+            </td>
+         </tr>
+         
+         <tr>
+            <th><label for="select3">User grade <span class="required">*</span></label></th>
+            <td>
+               <select class="select_type_1 nm np" id="user_grade" name="user_grade" validate="required" >
+               <option value="" >-select-</option>
+               <% for(var i = 0; i < user_grade_rows.length; i++){ %>
+                <% var row = user_grade_rows[i]; %>
+                  <option 
+                  <% if(row.tug_idx == rows.tu_tug_idx){ %>
+                    selected
+                  <% }; %>  
+                  
+                  
+                  value="<%= row.tug_idx %>" title="<% if (row.tm_name != null) { %><%= row.tm_name %><% } else { %> <% }; %> <%= row.tug_desc %>" ><%= row.tug_name %></option>
+                <% }; %>
+               </select>
+            </td>
+         </tr>
+         
+         
+         
+      </tbody></table>
+      <div class="btn_div fr">
+         <a href="#" class="btn btn_type_3 btn_space" id="save_user" title="edit" ><span>Submit</span></a>
+      </div>
+
+        </form>                        
+        
+    </div>
+</div>
+
+

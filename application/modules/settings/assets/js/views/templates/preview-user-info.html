@@ -1,0 +1,46 @@
+<div>
+
+    <table class="table_form al" border="0" >
+         <colgroup>
+            <col width="100px">
+            <col>
+         </colgroup>
+         <tbody>
+         
+          <tr>
+            <th><label for="select3">Employee </label></th>
+            <td>
+            <input type="hidden" class="preview_emp_id" value="<%= rows.iemp_id %>" style="border:0;" readonly />
+            <input type="text" class="preview_empname input_type_1" value="<%= rows.iemp_name %>" style="border:0;width:250px;" readonly />
+            </td>
+         </tr>
+         
+         <tr>
+            <th><label for="textarea2">Username </label></th>
+            <td>
+               <input type="text" class="preview_username input_type_1" value="<%= rows.susername %>" style="border:0;" readonly />
+            </td>
+         </tr>
+         
+         <tr>
+            <th><label for="textarea2">Password </label></th>
+            <td>
+               <input type="text" class="preview_password input_type_1" value="<%= rows.spassword %>" style="border:0;" readonly />
+            </td>
+         </tr>
+         
+         <tr>
+            <th><label for="textarea2">User grade </label></th>
+            <td>
+               <input type="text" class="preview_usergrade input_type_1" value="<%= rows.iuser_grade %>" style="border:0;" readonly />
+            </td>
+         </tr>
+         
+    </table>
+    
+</div>
+
+<div class="btn_div fr">
+    <a href="#save" class="btn btn_type_3 btn_space" id="save_new_user" onclick=""><span> Save </span></a>
+    <a href="javascript: $('.mess_box').dialog('close'); " class="btn btn_type_3 btn_space" id="preview_cancel" onclick=""><span> Cancel </span></a>
+</div>

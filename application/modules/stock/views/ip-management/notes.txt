@@ -1,0 +1,7 @@
+employee when delete,
+sub category when delete,
+main category when delete,
+
+single delete need loader
+export functionality
+check for bugs

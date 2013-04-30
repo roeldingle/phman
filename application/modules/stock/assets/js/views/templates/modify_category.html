@@ -1,0 +1,42 @@
+<form class="sub_category_form">
+    <input type="hidden" name="subcat_id" value="<%= rows.subcat_data[0].tssc_sscid %>"  />
+    <table class="table_form al" border="0">
+        <colgroup>
+            <col width="140px">
+            <col>
+        </colgroup>
+        <tbody><tr>
+            <th><label for="select1"><span class="required nm np">*</span>Main Category</label></th>
+            <td>
+                <select class="select_type_1 nm np" id="main_category_selectlist" name="main_category_selectlist" validate="required" >
+                     <option value="">-select-</option>
+                     <% for(var i = 0; i < rows.maincat_data.length; i++){ %>
+                            <% var row = rows.maincat_data[i]; %>
+                                <option value="<%= row.tsmc_smcid %>"
+                                
+                               <%  if( parseInt(row.tsmc_smcid) == parseInt(rows.subcat_data[0].tssc_tsmc_smcid) ){ %>
+                                    selected
+                               <%  }; %>
+                                
+                                ><%= row.tsmc_name %></option>
+                        <% }; %>
+                    
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th><label for="input1"><span class="required nm np">*</span>Sub category name</label></th>
+            <td><input type="text" class="input_type_1 nm" id="sub_category_name" name="sub_category_name" value="<%= rows.subcat_data[0].tssc_name %>" validate="required"></td>
+        </tr>
+        
+        <tr>
+            <th><label for="input1"><span class="required nm np">&nbsp;&nbsp;</span>Description</label></th>
+            <td><input type="text" class="input_type_1 nm" id="sub_category_desc" name="sub_category_desc" value="<%= rows.subcat_data[0].tssc_description %>" validate="required"></td>
+        </tr>
+        
+    </tbody>
+    </table>
+    <div class="btn_div">
+        <a href="#" class="save_sub_category btn btn_type_3 btn_space fr"><span>&nbsp;Save&nbsp;</span></a>
+    </div>
+</form>

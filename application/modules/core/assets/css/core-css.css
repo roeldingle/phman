@@ -1,0 +1,40 @@
+.core-message-success,.core-message-warning{padding:7px;padding-right:20px;padding-left:11px;font-size:12px !important;font-weight:bold;font-family:arial;
+margin:5px 2px 5px 2px;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;
+text-align:left;position:relative;display:inline-block;width:98%;}
+.core-message-close{position:absolute;right:9px;top:6px;font-weight:bold;color:#333;text-decoration:none;}
+.core-message-success{border:solid 2px #468847;background:#DFF0D8;color:#468847;}
+.core-message-warning{border:solid 2px #B94A48;background:#F2DEDE;color:#B94A48;}
+
+div.core-form-class-error{border:solid 1px #EED3D7;cursor:default;background:#F2DEDE;color:#B94A48;font-size:11px;font-family:arial;display:inline;padding:2px 5px 2px 5px;left:3px;bottom:2px;position:relative;--webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius: 3px;}
+input.core-form-class-error{background:#F2DEDE;padding:2px;}
+
+.core-upload-button-class{border:solid 1px #CCC !important;background:whitesmoke !important;font-size:12px !important;padding:2px 6px 2px 6px !important;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;font-weight:bold !important;color:#333 !important;cursor:pointer;font-family:arial !important;}
+.core-upload-button-class:active{position:relative;top:1px;background:#eee;border:inset 1px #CCC;color:gray !important;}
+.no-display{display:none;}
+
+
+/** For File Upload **/
+.core-fileupload-container{display:inline-block;padding:2px;}
+.core-fileupload-loader{background:url(../images/core-fileupload-loader.gif) left no-repeat;padding-left:19px;padding-top:2px;padding-bottom:2px;position:relative;top:-1px !important;font-size:11px;}
+.core-fileupload-error-message{font-size:11px !important;border:solid 1px #EED3D7;background:#F2DEDE;color:#B94A48;padding:2px 5px 2px 5px;}
+.core-fileupload-addfile-button{font-family:arial !important;position:relative;}
+.core-fileupload-upload-list{}
+.core-fileupload-upload-list ul{list-style:none;margin:0; padding:0;}
+.core-fileupload-upload-list ul li{font-size:12px !important;;padding:1px;margin-top:2px;position:relative;cursor:default;font-family:arial !important;}
+.core-fileupload-upload-list ul li a{position:relative;left:4px;bottom:0;text-decoration:none;color:red;}
+.core-fileupload-upload-list ul li a:hover{color:#333;}
+.core-fileupload-loader{position:relative;top:3px;left:-1px;font-size:10px;}
+
+/** Icons**/
+.core-icons-csv, .core-icons-excel,.core-icons-pdf,.core-icons-image,.core-icons-text,.core-icons-zip,.core-icons-zip,.core-icons-presentation,.core-icons-default,.core-icons-simple,.core-icons-word{background:url(../images/file-icons/core-csv.png);width:16px !important;height:16px;display:inline-block;position:relative;top:3px;right:3px;}
+.core-icons-excel{background:url(../images/file-icons/core-excel.png);}
+.core-icons-pdf{background:url(../images/file-icons/core-pdf.png);}
+.core-icons-image{background:url(../images/file-icons/core-image.png);}
+.core-icons-text{background:url(../images/file-icons/core-text.png);}
+.core-icons-word{background:url(../images/file-icons/core-word.png);}
+.core-icons-zip{background:url(../images/file-icons/core-zip.png);}
+.core-icons-presentation{background:url(../images/file-icons/core-presentation.png);}
+.core-icons-default{background:url(../images/file-icons/core-default.png);}
+.core-icons-simple{background:url(../images/file-icons/core-simple.png);}
+.core-icons-calendar{background:url(../images/calendar-day.png) left center no-repeat;width:50px;height:50px;padding-left:16px;cursor:pointer;}
+input[type="file"]{cursor:pointer;}

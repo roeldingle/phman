@@ -1,0 +1,24 @@
+                    <p style="font-style:italic;font-size:10px;" class="mr5">*Password must be minimum of 4 and maximum of 12 characters long (at least 1 letter and 1 number)</p>
+					<table class="table_form al" border="0" style="margin:10px 0 20px 0;width:100%">
+						<colgroup>
+							<col width="140px" />
+							<col />
+						</colgroup>
+                        <tr>
+							<th><label for="input1">New Password</label></th>
+							<td>
+                            <span><input type="password" class="input_type_1" name="new_pass" validate="required|password" /></span>
+                            
+                            </td>
+						</tr>
+						<tr>
+							<th><label for="input1">Confirm New Password</label></th>
+							<td>
+                            <span><input type="password" name="new_confirm_pass" class="input_type_1" validate="required|equalto[name=new_pass]" /></span>
+                            
+                            </td>
+						</tr>
+					</table>
+                    <div>
+                    <a href="#" class="btn btn_type_3 mr10" id="btn_save_update"><span>Save &gt;&gt;</span></a>
+                    </div>

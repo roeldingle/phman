@@ -1,0 +1,2 @@
+<a class="a1-link" href="<?php echo $getfile_path;?>example/uploads/sub/example.xml?download=true">Download File</a><br /><br />
+<b>File Path : <?php echo $getfile_path;?>example/uploads/sub/example.xml?download=true</b>

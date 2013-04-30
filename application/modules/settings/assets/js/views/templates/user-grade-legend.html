@@ -1,0 +1,23 @@
+<strong >USER GRADE</strong>
+    <table class="table_wrap_1 tstyle_4 legend_tb" style="width:350px;">
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Module</th>
+        <th>Permission</th>
+    
+    
+    </tr>
+        
+         <% for(var i = 0; i < user_grade_rows.length; i++){ %>
+                <% var row = user_grade_rows[i]; %>
+                    <tr>
+                        <td><%= i+1 %></td>
+                        <td><%= row.tug_name %></td>
+                        <td><% if (row.tm_name != null) { %><%= row.tm_name %><% } else { %>all<% }; %></td>
+                        <td><%= row.tug_desc %></td>
+                    </tr>
+                <% }; %>
+                
+                
+    </table>

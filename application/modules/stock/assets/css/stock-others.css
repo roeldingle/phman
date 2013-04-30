@@ -1,0 +1,28 @@
+.search_02 .calendar_icon {margin-top:3px;vertical-align:top;width:16px;}
+.tarea{border: solid 1px #CCC;padding: 4px;}
+textarea.success{border: solid 1px #CCC;padding: 5px;}
+textarea.error{border: solid 1px #ff0000;padding: 5px;}
+input.error{border: solid 1px #ff0000;}
+.no-display{display: none;}
+
+
+
+
+.table_hover tr td{
+    background-color: #DDF5D5 !important; 
+}
+
+.readonly1{background-color:#eee;}
+
+.span1{width:115px;}
+.span2{width:125px;}
+.span3{width:135px;}
+.span4{width:145px;}
+.span5{width:155px;}
+.span6{width:165px;}
+
+
+
+
+.table-fixed{table-layout:fixed;}
+.table-fixed td{table-layout:fixed;word-wrap:break-word;}

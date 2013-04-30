@@ -1,0 +1,10 @@
+.img {cursor:pointer;opacity:0.6}
+.setting_toggle {position:relative;display:inline-block}
+.setting_toggle strong {width:120px;margin:0 0 5px;font-weight:bold;font-size:14px;display:inline-block}
+.seatplan_list {width:120px;padding:10px 0;border-top:3px solid #333;position:absolute;top:20px;left:0;background:url(../../site/images/shade.png) left top;z-index:50000;border-radius:0 0 5px 5px}
+.seatplan_list li {margin:0 0 15px;padding:0}
+.seatplan_list li a {margin:0;padding:0;cursor:font-size:13px;pointer;color:#fff}
+.seatplan_list li a:hover {font-weight:bold;color:#ffc600}
+.t_settings{cursor:pointer;opacity:0.9}
+.settings_icon {width:18px;height:18px}
+.map_size {width:1000px;height:650px;border:0px;margin: 0 auto}

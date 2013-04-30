@@ -1,0 +1,11 @@
+TODO:
+1. Fixed cache options (Done)
+2. Update AJAX Functions (Done)
+3. Write Attribute in script tag (Done)
+4. Image caching(Done)
+5. Parse Language In Javascript File (Done)
+6. File Upload
+7. If not js,css,images how to require files. (Done)
+8. Download  (Done)
+9. Export()
+10. Menu Management()

@@ -1,0 +1,67 @@
+<input type="hidden" id="form_action" value="add" />
+<input type="hidden" id="date_created" value="new_user" />
+<div id="main_wrap">
+    <div class="message_wrap_dialog" style="width:95%;"></div>
+    <div id="form-login" class="ui-corner-all">
+        <form method="POST" id="add_user_form">
+           
+      <table class="table_form al" border="0">
+         <colgroup>
+            <col width="140px">
+            <col>
+         </colgroup>
+         <tbody>
+         <!--
+          <tr>
+            <th><label for="select3">Employee <span class="required">*</span></label></th>
+            <td>
+               <div class="ui-widget fl nm np" >
+                  <input class="input_type_1" id="employee_listed" style="width:220px;" name="employee_listed" validate="required" /><a href="#" class="small_link ml10" id="change_link" >Change</a> 
+                  <input type="hidden" id="employee_id"/>
+                  <p style="font-style:italic;font-size:10px;" class="mr5">Note : autocomplete keywords ( firstname, lastname or position )</p>
+               </div>
+            </td>
+         </tr>
+        -->
+         <tr>
+            <th><label for="textarea2">Username <span class="required">*</span></label></th>
+            <td>
+               <input class="input_type_1" id="employee_username" name="employee_username"  validate="required|alpha|rangelength[6,12]" />
+               <p style="font-style:italic;font-size:10px;" class="mr5">Must be at least 6 characters (no special characters)</p>
+            </td>
+         </tr>
+         
+          <tr>
+            <th><label for="textarea2">Password <span class="required">*</span></label></th>
+            <td>
+               <input type="password" class="input_type_1" id="employee_password" name="employee_password" validate="required|password" />
+               <p style="font-style:italic;font-size:10px;" class="mr5">Minimum of 4 and maximum of 12 characters long (at least 1 letter and 1 number)</p>
+            </td>
+         </tr>
+         
+         <tr>
+            <th><label for="select3">User grade <span class="required">*</span></label></th>
+            <td>
+               <select class="select_type_1 nm np" id="user_grade" name="user_grade" validate="required" >
+               <option value="" >-select-</option>
+               <% for(var i = 0; i < user_grade_rows.length; i++){ %>
+                <% var row = user_grade_rows[i]; %>
+                  <option value="<%= row.tug_idx %>" title="<% if (row.tm_name != null) { %><%= row.tm_name %><% } else { %> <% }; %> <%= row.tug_desc %>" ><%= row.tug_name %></option>
+                <% }; %>
+               </select>
+            </td>
+         </tr>
+         
+         
+         
+      </tbody></table>
+      <div class="btn_div fr">
+         <a href="#" class="btn btn_type_3 btn_space" id="save_user" title="add"><span>Submit</span></a>
+      </div>
+
+        </form>                        
+        
+    </div>
+</div>
+
+

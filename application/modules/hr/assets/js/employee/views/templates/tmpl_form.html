@@ -1,0 +1,520 @@
+<div class="content2">
+<input type="hidden" id="emp_id"/>
+<form name="add_employee" id="employee_record">
+    	<h2 class="title" id="employee-label"><%if(modify_flag=="add"){%>Add New Employee<%}else{%>Edit Employee Info<%}%></h2>
+
+    <p class="np info">Complete the entire fields with valid and accurate information pertaining
+        to the  information needed.</p>
+    <div class="al employee_from_wrap">	<strong class="content_title">Company Record</strong>
+
+        <table class="al employee_form">
+            <colgroup>
+                <col width="235px" />
+                <col width="235px" />
+                <col width="235px" />
+                <col width="235px" />
+            </colgroup>
+			<tr>
+				<td colspan="4" class="al" >
+					<iframe id="uploadiframe" frameborder="0" width="230" height="250" scrolling="no" src="<%= module_url%>employee/image_uploader"></iframe>
+				</td>
+			</tr>
+            <tr>
+                <td>
+                    <label for="opt-position" class="label_name">Position</label><span class="necessary">&#42;</span>
+                    <div class="app_content">
+                        <select class="select_type_4 nm required" id="opt-position" name="position_id">
+                            <option value="">-Select Position]-</option>
+						<% for(var i = 0; i < position.length; i++){ %>
+				            <% var pstn = position[i]; %>
+				            <option value=<%= pstn.tp_idx %>><%= pstn.tp_position %></option>
+				        <% }; %>
+                        </select>
+                    </div>
+                </td>
+				<td>
+                    <label for="opt-department" class="label_name">Department</label><span class="necessary">&#42;</span>
+                    <div class="app_content">
+                        <select class="select_type_4 nm required" id="opt-department" name="department_id">
+                            <option value=''>-Select Department-</option>
+							<% for(var i = 0; i < department.length; i++){ %>
+								<% var dept = department[i]; %>
+								<option value=<%= dept.td_idx %>><%= dept.td_dept_name %></option>
+							<% }; %>
+                        </select>
+                    </div>
+                </td>
+                <td>
+                    <label for="employee-id" class="label_name">Employee I.D</label><span class="necessary">&#42;</span>
+                    <div class="app_content">
+                        <input type="text" class="input_type_5 required" id="employee-id" name="employee_id"/>
+                    </div>
+                </td>
+                <td class="restricted">
+                    <label for="current-salary" class="label_name">Basic Salary Rate</label><span class="necessary">&#42;</span>
+                    <div class="app_content">
+                       <input type="text" class="input_type_5 nm required" id="current-salary" name="current-salary"/>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="last-name" class="label_name">Last Name</label><span class="necessary">&#42;</span>
+                    <div class="app_content">
+                        <input type="text" class="input_type_5 nm required variable" id="last-name" name="lastname"/>
+                    </div>
+                </td>
+                <td>
+                    <label for="first-name" class="label_name">First Name</label><span class="necessary">&#42;</span>
+
+                    <div class="app_content">
+                        <input type="text" class="input_type_5 nm required variable" id="first-name" name="firstname"/>
+                    </div>
+                </td>
+                <td>
+                    <label for="middle-name" class="label_name">Middle Name</label><span class="necessary">&#42;</span>
+                    <div class="app_content">
+                        <input type="text" class="input_type_5 nm required variable" id="middle-name" name="middlename"/>
+                    </div>
+                </td>
+                <td>
+                    <label for="nick-name"class="label_name">Nickname</label><span class="necessary">&#42;</span>
+                    <div class="app_content">
+                        <input type="text" class="input_type_5 nm required variable" id="nick-name" name="nickname"/>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <label for="address" class="label_name">City Address</label><span class="necessary">&#42;</span>
+                    <div class="app_content">
+                        <input type="text" class="input_type_5 nm required" id="address" name="address" style="width:100%"/>
+                    </div>
+                </td>
+            </tr>
+			<tr>
+                <td colspan="4">
+                    <label for="prov_address" class="label_name">Provincial Address</label>
+                    <div class="app_content">
+                        <input type="text" class="input_type_5 nm" id="prov_address" name="prov_address" style="width:100%"/>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="home-number"class="label_name">Home Number</label>
+                    <div class="app_content">
+                        <input type="text" class="input_type_5 nm digits" id="home_no" name="homeno" /><!--new field-->
+                    </div>
+                </td>
+                <td>
+                    <label for="contact-number" class="label_name">Mobile Number</label><span class="necessary">&#42;</span>
+                    <div class="app_content">
+                        <input type="text" class="input_type_5 nm required digits" id="contact-number" name="contact_number"/>
+                    </div>
+                </td>
+                <td>
+                    <label for="email-add" class="label_name">E-mail Address</label><span class="necessary">&#42;</span>
+                    <div class="app_content">
+                        <input type="text" class="input_type_5 nm  required email" id="email-add" name="email_address"/>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="label_name">Gender</label><span class="necessary">&#42;</span>
+                    <div class="app_content ac employee_opt">
+                        <ul class="opt_radio nl np">
+                            <li><label for="opt-male">Male</label><input type="radio" class="radio_type_1 np" name="gender"  value="m" id="m" checked="checked" />&nbsp;&nbsp;&nbsp;|</li>
+							<li><label for="opt-female">Female</label><input type="radio" class="radio_type_1 np" name="gender" value="f" id="f" /></li>
+                        </ul>
+                    </div>
+                </td>
+                <td colspan="2">
+                    <label class="label_name">Marital Status</label><span class="necessary">&#42;</span>
+                    <div class="app_content ac employee_opt">
+                        <ul class="opt_radio nl np">
+                            <li>
+                                <label for="single">Single</label>
+                                <input type="radio" class="radio_type_1 np" name="marital" id="single" checked="checked" value="single"/>&nbsp;&nbsp;&nbsp;|
+                            </li>
+                            <li>
+                                <label for="married">Married</label>
+                                <input type="radio" class="radio_type_1 np" name="marital" id="married" value="married"/>&nbsp;&nbsp;&nbsp;|
+                            </li>
+                            <li>
+                                <label for="widow">Widow</label>
+                                <input type="radio" class="radio_type_1 np" name="marital" id="widow" value="widow"/>&nbsp;&nbsp;&nbsp;|
+                            </li>
+							<li>
+                                <label for="separated">Separated</label>
+                                <input type="radio" class="radio_type_1 np" name="marital" id="separated" value="separated"/>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+                <td>
+                    <label class="label_name">Date of Birth</label><span class="necessary">&#42;</span>
+                    <div class="app_content">
+                        <input type="text" value="" class="input_type_1 required" style="width:230px" id="bday" name="birthdate" readOnly="readOnly"/>
+						<img src="<%= assets_path %>site/images/calendar-day.png" class="calendar_icon" />
+                    </div>
+                </td>
+            </tr>
+			<tr>
+				<td>
+                    <label for="work-status" class="label_name">Work Status</label><span class="necessary">&#42;</span>
+                    <div class="app_content">
+                        <select class="select_type_4 nm np required" id="status_work" name="work_status">
+							<option value=''>-Select Status-</option>
+							 <% for(var i = 0; i < work_status.length; i++){ %>
+								<% var wstatus = work_status[i]; %>
+								<option value=<%= wstatus.tws_idx %>><%= wstatus.tws_status_name %></option>
+							<% }; %>
+						</select>
+                    </div>
+                </td>
+				<td class="date_started">
+					<label class="label_name">Hired Date</label><span class="necessary">&#42;</span>
+					<div class="app_content">
+						<input type="text" value="" class="input_type_1 required" id="date_start" name="date_started" readOnly="readOnly" style="width:230px"/>
+						<img src="<%= assets_path %>site/images/calendar-day.png" class="calendar_icon" />			
+					</div>
+				</td>
+				<td class="date_ended">
+					<label class="label_name">Resigned Date</label><span class="necessary">&#42;</span>
+					<div class="app_content">
+						<input type="text" value="" class="input_type_1 required" id="date_end" name="date_ended" readOnly="readOnly" style="width:230px"/>
+						<img src="<%= assets_path %>site/images/calendar-day.png" class="calendar_icon" />			
+					</div>
+				</td>
+				<td class="probation_ended">
+					<label class="label_name">Regularization Date</label><span class="necessary">&#42;</span>
+					<div class="app_content">
+						<input type="text" value="" class="input_type_1 required" id="date_prob" name="probationary_date_ended" readOnly="readOnly" style="width:230px"/>
+						<img src="<%= assets_path %>site/images/calendar-day.png" class="calendar_icon" />			
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+                    <label for="employment-type" class="label_name">Employment Type</label>
+                    <div class="app_content">
+                        <select class="select_type_4 nm required" id="employment-type" name="employment_type">
+                            <option value=''>-Select Type-</option>
+							<% for(var i = 0; i < employment_type.length; i++){ %>
+								<% var emp_type = employment_type[i]; %>
+								<option value=<%= emp_type.tet_idx %>><%= emp_type.tet_type_name %></option>
+							<% }; %>
+                        </select>
+                    </div>
+                </td>
+				<td>
+					<label class="sss-label"><label class="label_name">SSS</label><span class="necessary">&#42;</span></label>
+                    <div class="app_content">
+                        <input type="text" class="input_type_5 nm" id="sss-num" name="sss_number"/>
+                    </div>
+				</td>
+				<td>
+					<label class="tin-label"><label class="label_name">TIN</label><span class="necessary">&#42;</span></label>
+                    <div class="app_content">
+                        <input type="text" class="input_type_5 nm" id="tin-num" name="tin"/>
+                    </div>
+				</td>
+				<td>
+					<label class="philhealth-label"><label class="label_name">Philhealth</label><span class="necessary">&#42;</span>
+                    <div class="app_content">
+                        <input type="text" class="input_type_5 nm" id="philhealth-num" name="philhealth"/>
+                    </div>
+				</td>
+			</tr>
+			<tr class="experienced requirements">
+				<td colspan="4">
+				<label class="pagibig-label"><label class="label_name">PAG-IBIG</label><span class="necessary">&#42;</span></label>
+					<div class="app_content ac employee_opt">
+                        <ul class="opt_radio nl np">
+                            <li>
+                                <label for="trackno">Tracking No.</label>
+                                <input type="text" class="input_type_1 nm" id="pagibigtrack-num" name="pagibigtrack"/>
+                            </li>
+                            <li>
+                                <label for="mid">MID No.</label>
+                                <input type="text" class="input_type_1 nm" id="pagibigMid-num" name="pagibigMid"/>
+                            </li>
+                        </ul>
+                    </div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4">
+				<label class="bank-label"><label class="label_name">Bank Information</label><span class="necessary">&#42;</span></label>
+					<div class="app_content ac employee_opt">
+                        <ul class="opt_radio nl np">
+                            <li>
+                                <label for="bankname">Bank Name</label>
+                                <input type="text" class="input_type_1 nm" id="bank_name" name="bank_name"/>
+                            </li>
+                            <li>
+                                <label for="bankno">Bank Account No.</label>
+                                <input type="text" class="input_type_1 nm" id="bank_account" name="bank_account"/>
+                            </li>
+                        </ul>
+                    </div>
+				</td>
+			</tr>
+        </table>
+    </div>
+    <div class="al employee_from_wrap">	<strong class="content_title">Educational Background</strong>
+
+        <table class="al employee_form">
+            <colgroup>
+                <col width="235px" />
+                <col width="235px" />
+                <col width="235px" />
+                <col width="235px" />
+            </colgroup>
+            <tr>
+                <td colspan="2">
+                    <label for="school" class="label_name">School</label>
+                    <div class="app_content">
+                        <input type="text" class="input_type_5 nm" style="width:95%" id="school_name"/>
+                    </div>
+                </td>
+                <td colspan="2">
+                    <label for="school_location" class="label_name">Location</label>
+                    <div class="app_content">
+                        <input type="text" class="input_type_5 nm" style="width:100%" id="school_location" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label for="course" class="label_name">Course</label>
+                    <div class="app_content">
+                        <input type="text" class="input_type_5 nm" style="width:95%" id="course"/>
+                    </div>
+                </td>
+                <td>
+                    <label class="label_name">Inclusive Dates</label>
+                    <div class="app_content">
+                        <input type="text" class="input_type_5 nm" id="inc_dates"/>
+                    </div>
+                </td>
+                <td>
+                    <label class="label_name">Year Graduated</label>
+                    <div class="app_content">
+                        <input type="text" class="input_type_5 nm" id="year_grad"/>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <label class="label_name">Vocational/Technical/Associate Degree</label>
+                    <div class="app_content">
+                        <input type="text" class="input_type_5 nm" style="width:95%" id="certi_deg"/>
+                    </div>
+                </td>
+                <td>
+                    <label class="label_name">Date Completed</label>
+                    <div class="app_content">
+                        <input id="certi_deg_completed" type="text" class="input_type_5 nm" />
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="al employee_from_wrap experienced">	<strong class="content_title">Employment History</strong>
+
+        <table class="al employee_form">
+            <colgroup>
+                <col width="235px" />
+                <col width="235px" />
+                <col width="235px" />
+                <col width="235px" />
+            </colgroup>
+            <tr>
+                <td colspan="2">
+                    <label class="label_name">Total Years of Experience</label>
+                    <div class="app_content ac employee_opt">
+                        <ul class="opt_radio nl np">
+                            <li>
+                                <label class="mr5">Year</label>
+                                <input type="text" class="input_type_3 np" id="tot_year" />
+                            </li>
+                            <li>
+                                <label class="mr5">Month</label>
+                                <input type="text" class="input_type_3 np" id="tot_month"/>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+                <td colspan="2">
+                    <label class="label_name">Employment Period</label>
+                    <div class="app_content ac employee_opt">
+                        <ul class="opt_radio nl np">
+                            <li>
+                                <label class="mr5">From</label>
+                                <input type="text" value="" class="input_type_3 np" id="employ_from" name="employment_from" readOnly="readOnly"/>
+								<img src="<%= assets_path %>site/images/calendar-day.png" class="calendar_icon" />
+                            </li>
+                            <li>
+                                <label class="mr5">To</label>
+                                <input type="text" value="" class="input_type_3 np" id="employ_to" name="employment_to" readOnly="readOnly"/>
+								<img src="<%= assets_path %>site/images/calendar-day.png" class="calendar_icon" />
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <label class="label_name">Company</label>
+                    <div class="app_content">
+                        <input type="text" style="width:95%" class="input_type_5 nm" id="prev_company_name"/>
+                    </div>
+                </td>
+                <td>
+                    <label class="label_name">Position</label>
+                    <div class="app_content">
+                        <input type="text" class="input_type_5 nm" id="prev_company_pos"/>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <label class="label_name">Main Responsibility</label>
+                    <div class="app_content">
+                        <input type="text" style="width:100%" class="input_type_5 nm" id="prev_company_res"/>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="label_name">Contact Number</label>
+                    <div class="app_content">
+                        <input type="text" class="input_type_5 nm digits" id="prev_company_contact"/>
+                    </div>
+                </td>
+                <td colspan="3">
+                    <label class="label_name">Address</label>
+                    <div class="app_content">
+                        <input type="text" class="input_type_5 nm" style="width:100%" id="prev_company_add"/>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label class="label_name">Salary (Monthly Gross)</label>
+                    <div class="app_content ac employee_opt">
+                        <ul class="opt_radio nl np">
+                            <li>
+                                <label class="mr5">Start</label>
+                                <input type="text" id="prev_start_salary" class="input_type_3 np" />
+                            </li>
+                            <li>
+                                <label class="mr5">Last</label>
+                                <input type="text" id="prev_last_salary" class="input_type_3 np" />
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+                <td colspan="2">
+                    <label class="label_name">Reason for Leaving</label>
+                    <div class="app_content">
+                        <input type="text" style="width:95%" class="input_type_5 nm" id="reason_leave"/>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+	<div class="al employee_from_wrap">
+		<strong class="content_title">Dependents</strong>
+		<p class="np info">List down employee dependents | <span id="resetdepen"><a id="reset_depen">Reset Dependents</a></span></p>
+		<table class="al employee_form dependents_table">
+			<colgroup>
+				<col width="235px" />
+				<col width="215px" />
+				<col width="175px" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Birthday</th>
+					<th>Relationship</th>
+				</tr>
+			</thead>
+			<tbody class="dependents_child">
+			<%for(var i=1; i<=5; i++){%>
+			<tr class="dependents">
+				<td>
+					<input type="text" class="input_type_5 nm depen_name" name="depen_name[]"/>
+				</td>
+				<td>
+					<input type="text" value="" class="input_type_1 depen_bday" style="width:180px" name="depen_bday[]" readOnly="readOnly"/>
+					<img src="<%= assets_path %>site/images/calendar-day.png" class="calendar_icon" />
+				</td>
+				<td>
+					<input type="text" class="input_type_5 nm depen_rel" name="depen_rel[]"/>
+				</td>
+			</tr>
+			<%}%>
+			</tbody>
+		</table>
+	</div>
+	<div class="al employee_from_wrap">	<strong class="content_title">In Case Of Emergency, Notify : </strong>
+
+		<table class="al employee_form">
+			<colgroup>
+				<col width="235px" />
+				<col width="235px" />
+				<col width="235px" />
+				<col width="235px" />
+			</colgroup>
+			<tr>
+				<td>
+					<label for="notify_name" class="label_name">Name</label><span class="necessary">&#42;</span>
+					<div class="app_content">
+						<input type="text" class="input_type_5 nm required variable" id="notify_name" name="notify_name"/>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="notify_relation" class="label_name">Relation</label><span class="necessary">&#42;</span>
+					<div class="app_content">
+						<input type="text" class="input_type_5 nm required" id="notify_relation" name="notify_relation"/>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="notify_no" class="label_name">Contact Number</label><span class="necessary">&#42;</span>
+					<div class="app_content">
+						<input type="text" class="input_type_5 nm required digits" id="notify_no" name="notify_no"/>
+					</div>
+				</td>
+				<td>
+					<label for="notify_no2" class="label_name">Contact Number 2</label>
+					<div class="app_content">
+						<input type="text" class="input_type_5 nm digits" id="notify_no2"/>
+					</div>
+				</td>
+			</tr>
+			<tr>                
+				<td colspan="4">
+						<label for="notify_add" class="label_name">Address</label><span class="necessary">&#42;</span>
+						<div class="app_content">
+							<input type="text" class="input_type_5 nm required" id="notify_add" name="notify_add" style="width:100%"/>
+						</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+    <ul class="control_buttons np nl">
+        <li><input id="save_form" type="submit" value="Save"/></li>
+		<li><a href="#" id="backList" class="link_1 mt5 fl">Back To List</a></li>
+		<li id="word_export"><li>
+    </ul>
+	</form>
+</div>
